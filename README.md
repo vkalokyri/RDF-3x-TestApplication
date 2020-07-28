@@ -29,11 +29,13 @@ this functionality. After building it, we loaded the Barton dataset in 12,40 min
 2.7 GB space. As mentioned in paper, Barton dataset was loaded in 13 min and had size 2.8 GB (Table
 1).
 
-|              |  Barton dataset      |  Yago2 dataset      |
-|--------------|:--------------------:|--------------------:|
-|              |  Load time | DB size | Load time | DB size |
-| RDF-3X-0.3.7 |  12.40 min |  2.7 GB | 15.10 min | 2.7 GB  |
-| RDF-3X-0.3.5 |    13 min  |  2.8 GB |    -      |   -     |
+
+
+|              |    Barton dataset |      |   Yago2 dataset |    |
+|--------------|:------------|-----------:|----------|----------:|
+|              | Load time   |  DB size  | Load time | DB size |
+| RDF-3X-0.3.7 |  12.40 min  |  2.7 GB   | 15.10 min | 2.7 GB  |
+| RDF-3X-0.3.5 |    13 min   |  2.8 GB   |    -      |   -     |
 
 (^) Load timeBarton dataset DB size Load timeYago 2 dataset^ DB size
 RDF-3X-0.3. 7 12.40 min 2.7 GB 15.10 min 2.7 GB
@@ -47,9 +49,12 @@ source code we used is the latest one, released in the end of 2011 whereas the e
 the paper was the first one, released in 2010. After we had loaded the dataset we run the queries
 presented in the Appendix. The query run times are shown in table 2 and figure 2.
 
-Q1 Q2 Q3 Q4 Q5 Q6 Q
-RDF-3X-0.3. 7 0.001 0.84 2.07 1.45 0.48 1.05 1.
-RDF-3X-0.3.5 0.001 1.17 2.22 1.58 0.49 1.20 1.
+|              |  Q1  | Q2 | Q3 |Q4 |Q5|  Q6 |   Q7 |
+|--------------|------|----|---|----|----|---|-----|
+| RDF-3X-0.3.7 |  0.001 | 0.84 |2.07 | 1.45 | 0.48 | 1.05| 1.12 |
+| RDF-3X-0.3.5 | 0.001 | 1.17 |2.22 | 1.58 | 0.49 | 1.20| 1.26 |
+
+
 
 ```
 Table 2 : Query run-times in seconds for the Barton dataset

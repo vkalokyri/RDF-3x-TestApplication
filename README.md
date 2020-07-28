@@ -23,6 +23,7 @@ the conversion can be run like so: rapper -e -o ntriples – file://bartonX.rdf#
 62 .nt files into one and we loaded the resulted NTriple form dataset into RDF-3X engine. The original
 data was 4.5 GB in MODS/RDF format, 6.5 GB in triple form and 2.7 GB in the RDF-3X store
 including all indexes and the string dictionary.
+
 After we had downloaded the RDF-3X version 1.7 source code, we edited the rdf3xload.cpp
 and rdf3xquery.cpp so as to be able to count the load and queries times since RDF-3X doesn't support
 this functionality. After building it, we loaded the Barton dataset in 12,40 min (mean time), occupying
@@ -36,16 +37,12 @@ this functionality. After building it, we loaded the Barton dataset in 12,40 min
 |              | Load time   |  DB size  | Load time | DB size |
 | RDF-3X-0.3.7 |  12.40 min  |  2.7 GB   | 15.10 min | 2.7 GB  |
 | RDF-3X-0.3.5 |    13 min   |  2.8 GB   |    -      |   -     |
-
-(^) Load timeBarton dataset DB size Load timeYago 2 dataset^ DB size
-RDF-3X-0.3. 7 12.40 min 2.7 GB 15.10 min 2.7 GB
-RDF-3X-0.3.5 13 min 2.8 GB - -
 Table 1: Database load after triple construction
+
+
 The difference in query times is rational because our DB size is slightly smaller than that of
 paper's, our PC has better characteristics than that of paper's, and finally the version of the RDF-3X
 source code we used is the latest one, released in the end of 2011 whereas the engine that was used in
-
-
 the paper was the first one, released in 2010. After we had loaded the dataset we run the queries
 presented in the Appendix. The query run times are shown in table 2 and figure 2.
 
@@ -54,14 +51,6 @@ presented in the Appendix. The query run times are shown in table 2 and figure 2
 | RDF-3X-0.3.7 |  0.001 | 0.84 |2.07 | 1.45 | 0.48 | 1.05| 1.12 |
 | RDF-3X-0.3.5 | 0.001 | 1.17 |2.22 | 1.58 | 0.49 | 1.20| 1.26 |
 
-
-
-```
-Table 2 : Query run-times in seconds for the Barton dataset
-```
-```
-Figure 2 : Query run-times in 10 -^2 seconds for the Barton dataset
-```
 The observation is that RDF-3X performs a little better in our case for the same reasons we mentioned
 before.
 
@@ -77,53 +66,6 @@ since we weren't able to run the queries presented there.
 
 After downloading YAGO2, we loaded YAGO2 dataset in 15.10 min, occupying 2.7 GB for all
 indexes and the string dictionary (figure 1). After we had loaded the dataset, we run the queries
-
-```
-0
-```
-```
-20
-```
-```
-40
-```
-```
-60
-```
-```
-80
-```
-```
-100
-```
-```
-120
-```
-```
-140
-```
-```
-160
-```
-```
-A1 A2 A3 A4 A5 A6 A7 A
-```
-```
-Run
-```
-**- time (10^
-- 2sec)**
-
-```
-Queries
-```
-## Barton dataset
-
-```
-RDF-3X-0.
-RDF-3X-0.
-```
-
 presented in the Appendix. These queries are not identical to those in the paper. We tried to reformulate
 YAGO queries presented in [1] in order to be applicable in the YAGO2 dataset, by changing
 namespaces and predicate names. These queries have three different application scenarios, entity-
@@ -133,9 +75,11 @@ explicitly given predicates. On the other hand, the queries are much larger (req
 many joins) and thus more difficult to optimize and execute. The query run times are shown in Table 3
 and figure 3.
 
-A1 A2 A3 B1 B2 B3 C1 C
-RDF-3X-0.3. 7 0.0 3 0.06 0.05 0.06 0.07 0.03 0.75 1.
-RDF-3X-0.3. 5 0.02 0.02 0.02 0.01 0.05 0.01 0.61 1.
+
+|              |  A1  | A2 | A3 |B1 |B2|  B3 | C1 | C2 |
+|--------------|------|----|---|----|----|---|-----|---|
+| RDF-3X-0.3.7 | 0.03 | 0.06 | 0.05 | 0.06 |0.07 | 0.03 |0.75| 1.02 |
+| RDF-3X-0.3.5 | 0.02 | 0.02 | 0.02 | 0.01 | 0.05 | 0.01 |0.61 |1.44 |
 
 ```
 Table 3 : Query run-times in seconds for the Yago 2 dataset for RDF-3X-0.3. 7 and Yago dataset for

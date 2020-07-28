@@ -101,10 +101,11 @@ than another, the query run-times will be increased.
 
 ### Barton Dataset.
 
-prefix rdfs: [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#)
+prefix rdfs: [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#) 
 prefix rdf: [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#)
 prefix barton: [http://simile.mit.edu/2006/01/ontologies/mods3#](http://simile.mit.edu/2006/01/ontologies/mods3#)
 prefix bartonLng: [http://simile.mit.edu/2006/01/language/iso639-2b](http://simile.mit.edu/2006/01/language/iso639-2b)
+
 
 Q1: select count ?c where {?a a ?c}
 

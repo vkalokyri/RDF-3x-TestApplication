@@ -29,11 +29,11 @@ this functionality. After building it, we loaded the Barton dataset in 12,40 min
 2.7 GB space. As mentioned in paper, Barton dataset was loaded in 13 min and had size 2.8 GB (Table
 1).
 
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
+|              |  Barton dataset      |  Yago2 dataset      |
+|--------------|:--------------------:|--------------------:|
+|              |  Load time | DB size | Load time | DB size |
+| RDF-3X-0.3.7 |  12.40 min |  2.7 GB | 15.10 min | 2.7 GB  |
+| RDF-3X-0.3.5 |    13 min  |  2.8 GB |    -      |   -     |
 
 (^) Load timeBarton dataset DB size Load timeYago 2 dataset^ DB size
 RDF-3X-0.3. 7 12.40 min 2.7 GB 15.10 min 2.7 GB

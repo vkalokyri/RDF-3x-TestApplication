@@ -37,8 +37,9 @@ this functionality. After building it, we loaded the Barton dataset in 12,40 min
 |              | Load time   |  DB size  | Load time | DB size |
 | RDF-3X-0.3.7 |  12.40 min  |  2.7 GB   | 15.10 min | 2.7 GB  |
 | RDF-3X-0.3.5 |    13 min   |  2.8 GB   |    -      |   -     |
+```
 Table 1: Database load after triple construction
-
+```
 
 The difference in query times is rational because our DB size is slightly smaller than that of
 paper's, our PC has better characteristics than that of paper's, and finally the version of the RDF-3X
@@ -50,6 +51,9 @@ presented in the Appendix. The query run times are shown in table 2 and figure 2
 |--------------|------|----|---|----|----|---|-----|
 | RDF-3X-0.3.7 |  0.001 | 0.84 |2.07 | 1.45 | 0.48 | 1.05| 1.12 |
 | RDF-3X-0.3.5 | 0.001 | 1.17 |2.22 | 1.58 | 0.49 | 1.20| 1.26 |
+```
+Table 2 : Query run-times in seconds for the Barton dataset
+```
 
 The observation is that RDF-3X performs a little better in our case for the same reasons we mentioned
 before.
@@ -85,62 +89,13 @@ and figure 3.
 Table 3 : Query run-times in seconds for the Yago 2 dataset for RDF-3X-0.3. 7 and Yago dataset for
 RDF-3X-0.3. 5.
 ```
-```
-Figure 3: Query run-times in 10 -^2 seconds for the Yago 2 dataset for RDF-3X-0.3. 7 and Yago dataset for
-RDF-3X-0.3. 5.
-```
+
 In this experiment, we observe that the query run-times are a little greater in our case except of query
 A8. This occurs mostly because the queries we examined had less literals in the object section of the
 query graph pattern and thus the system had to obtain more result sets, resulting in greater query run-
 times. Another fact is that the YAGO2 dataset is a little bigger than simple YAGO dataset since
 YAGO2 is an extension of YAGO dataset and as a consequence we expect that when a dataset is bigger
 than another, the query run-times will be increased.
-
-```
-0
-```
-```
-20
-```
-```
-40
-```
-```
-60
-```
-```
-80
-```
-```
-100
-```
-```
-120
-```
-```
-140
-```
-```
-160
-```
-```
-A1 A2 A3 A4 A5 A6 A7 A
-```
-```
-Run
-```
-**- time (10^
-- 2 sec)**
-
-```
-Queries
-```
-## YAGO2 and YAGO dataset
-
-```
-RDF-3X-0.
-RDF-3X-0.
-```
 
 ## Appendix SPARQL Queries
 
@@ -167,7 +122,7 @@ Q6: select count ?ap where {{?as a barton:Text} union {?as barton:records []; a 
 
 Q7:select ?as ?bo ?co where {?as barton:point "end"; barton:encoding ?bo; a ?co}
 
-Yago2 Dataset.
+### Yago2 Dataset.
 
 prefix rdfs: [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#)
 prefix rdf: [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#)
@@ -211,7 +166,7 @@ rdf:type ?city. ?c2 rdf:type ?city2. ?city2 rdfs:label "city". ?city rdfs:label 
 yago:isCalled ?London. ?c2 yago:isCalled ?Paris.}
 
 
-References
+## References
 
 [1] T. Neumann and G. Weikum. RDF-3X: a RISC-style engine for RDF. Proceedings of the
 VLDB Endowment, 1(1):647–659, 2008.
